@@ -20,7 +20,7 @@ mongoose.Promise = global.Promise;
 const port = process.env.PORT;
 const app = express();
 
-mongoose.connect(`MONGODB_URL=mongodb+srv://Keith:${process.env.MONGODB_URL}@keithcluster.qhg7v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -37,7 +37,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   // store: MongoStore.create({
-  //   mongoUrl: `MONGODB_URL=mongodb+srv://Keith:${process.env.MONGODB_URL}@keithcluster.qhg7v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  //   mongoUrl: process.env.MONGODB_URL,
   //   mongoOptions: { useUnifiedTopology: true } // See below for details
   // })
 }));
