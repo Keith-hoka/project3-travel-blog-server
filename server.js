@@ -26,7 +26,8 @@ mongoose.connect(process.env.MONGODB_URL, {
 });
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://travel-blog-ga.netlify.app/"],
+  // origin: ["http://localhost:3000", "https://travel-blog-ga.netlify.app/"],
+  origin: "*",
   credentials: true,
   methods: "GET,POST,PUT,DELETE",
 }));
